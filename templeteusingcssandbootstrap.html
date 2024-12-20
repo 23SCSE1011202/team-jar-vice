@@ -1,0 +1,136 @@
+Html templetes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Healthcare System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Healthcare Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Patients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">User Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="mb-4">User Management</h2>
+
+        <!-- Add User Button -->
+        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addUserModal">Add New User</button>
+
+        <!-- User Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>john.doe@example.com</td>
+                        <td>Doctor</td>
+                        <td>
+                            <button class="btn btn-success btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@example.com</td>
+                        <td>Nurse</td>
+                        <td>
+                            <button class="btn btn-success btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addUserForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select class="form-control" id="role" required>
+                                <option value="">Select Role</option>
+                                <option value="Doctor">Doctor</option>
+                                <option value="Nurse">Nurse</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
